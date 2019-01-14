@@ -22,10 +22,12 @@ class Loader
 	 */
 	public static function init()
 	{
-		add_action( 'init', array( $this, 'loadTextdomain' ) );
+		$class = get_class();
+
+		add_action( 'init', array( $class, 'loadTextdomain' ) );
 
 		if ( is_admin() ) {
-			add_action( 'init', array( $this, 'admin' ) );
+			add_action( 'init', array( $class, 'admin' ) );
 		}
 	}
 
@@ -36,7 +38,8 @@ class Loader
 	 *
 	 * @return void
 	 */
-	public static function loadTextdomain() {
+	public static function loadTextdomain()
+	{
 		load_plugin_textdomain( 'plugin-name' );
 	}
 
@@ -47,6 +50,7 @@ class Loader
 	 *
 	 * @return void
 	 */
-	public static function admin() {
+	public static function admin()
+	{
 	}
 }
