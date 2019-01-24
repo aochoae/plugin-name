@@ -9,6 +9,7 @@
  * License: GNU General Public License v2 or later
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain: plugin-name
+ * Domain Path: /languages
  *
  * @package   PluginPackage
  * @author    Your Name
@@ -19,4 +20,4 @@
 /* PHP namespace autoloader */
 require_once( dirname( __FILE__ ) . '/autoloader.php' );
 
-add_action( 'plugins_loaded', array( '\PluginName\Loader', 'init' ), 5 );
+\PluginName\Loader::init( plugin_basename( __FILE__ ) );
