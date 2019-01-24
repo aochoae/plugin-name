@@ -1,9 +1,9 @@
 <?php
 /**
- * Plugin Name: Plugin name
+ * Plugin Name: Plugin Name
  * Plugin URI: https://example.com/plugin-name
  * Description: Description of the plugin.
- * Author: Your name
+ * Author: Your Name
  * Author URI: https://example.com
  * Version: 1.0.0
  * License: GNU General Public License v2 or later
@@ -11,7 +11,7 @@
  * Text Domain: plugin-name
  * Domain Path: /languages
  *
- * @package   PluginPackage
+ * @package   PluginName
  * @author    Your Name
  * @copyright 2019 Your Name or Company Name
  * @license   GPL-2.0+
