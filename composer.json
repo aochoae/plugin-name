@@ -1,0 +1,10 @@
+{
+  "name": "arya/wordpress-plugin",
+  "type": "project",
+  "description": "WordPress Plugin Boilerplate",
+  "license": "GPL-2.0-or-later",
+  "keywords": [ "wordpress", "plugin" ],
+  "require": {
+    "php": ">=7.0"
+  }
+}
