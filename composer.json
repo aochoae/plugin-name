@@ -4,7 +4,8 @@
   "description": "WordPress Plugin Boilerplate",
   "version": "1.0.0",
   "license": "GPL-2.0-or-later",
-  "keywords": [ "wordpress", "plugin" ],
+  "minimum-stability": "dev",
+  "keywords": [ "wordpress", "plugin", "boilerplate" ],
   "require": {
     "php": ">=7.0"
   }
