@@ -4,6 +4,10 @@
 
 * [PSR-4: Autoloader](https://www.php-fig.org/psr/psr-4/)
 
+## Composer
+
+    composer create-project --no-install --remove-vcs arya/wordpress-plugin DIRECTORY dev-master
+
 ## Docker (18.06.0+)
 
 Create and start the container
