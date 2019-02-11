@@ -5,6 +5,8 @@
 
 namespace PluginName;
 
+use PluginName\Admin\Admin;
+
 /**
  * Hook the WordPress plugin into the appropriate WordPress actions and filters.
  *
@@ -14,7 +16,9 @@ class Loader
 {
 	const VERSION = '1.0.0';
 
-	private $plugin = '';
+	private $plugin_file = '';
+
+	private $plugin_slug = '';
 
 	private static $instance;
 
@@ -23,9 +27,9 @@ class Loader
 	 *
 	 * @since 1.0.0
 	 */
-	private function __construct( $plugin )
+	private function __construct( $plugin_file )
 	{
-		$this->plugin = $plugin;
+		$this->plugin_file = $plugin_file;
 
 		add_action( 'init', array( $this, 'loadTextdomain' ) );
 
@@ -41,12 +45,12 @@ class Loader
 	 *
 	 * @since 1.0.0
 	 *
-	 * @return void
+	 * @return Loader
 	 */
-	public static function init( $plugin )
+	public static function init( $plugin_file ): Loader
 	{
 		if ( ! isset( self::$instance ) ) {
-			self::$instance = new Loader( $plugin );
+			self::$instance = new Loader( $plugin_file );
 		}
 
 		return self::$instance;
@@ -61,7 +65,7 @@ class Loader
 	 */
 	public function loadTextdomain()
 	{
-		load_plugin_textdomain( 'plugin-name', false, dirname( plugin_basename( $this->plugin ) ) . '/languages' );
+		load_plugin_textdomain( 'plugin-name', false, dirname( plugin_basename( $this->plugin_file ) ) . '/languages' );
 	}
 
 	/**
@@ -73,6 +77,7 @@ class Loader
 	 */
 	public function admin()
 	{
+		Admin::init( $this );
 	}
 
 	/**
@@ -84,5 +89,29 @@ class Loader
 	 */
 	public function loaded()
 	{
+	}
+
+	/**
+	 * TODO
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return
+	 */
+	public function getFile(): string
+	{
+		return $this->plugin_file;
+	}
+
+	/**
+	 * TODO
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return
+	 */
+	public function getSlug(): string
+	{
+		return basename( $this->plugin_file, '.php' );
 	}
 }
