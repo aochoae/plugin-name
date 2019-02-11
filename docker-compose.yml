@@ -15,7 +15,7 @@ services:
   wordpress:
     depends_on:
       - db
-    image: wordpress:5.0-apache
+    image: wordpress:5.0-php7.1-apache
     ports:
       - "8000:80"
     restart: always
