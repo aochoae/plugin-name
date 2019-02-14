@@ -127,7 +127,7 @@ class Admin
         <div class="wrap">
             <h1 class="wp-heading-inline"><?php esc_html_e( 'Plugin Name', 'plugin-name' ); ?></h1>
 		</div>
-    <?php
+	<?php
 	}
 
 	/**
