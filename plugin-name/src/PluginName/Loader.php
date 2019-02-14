@@ -33,7 +33,10 @@ class Loader
 
 		add_action( 'init', array( $this, 'loadTextdomain' ) );
 
-		add_action( 'plugins_loaded', array( $this, 'loaded' ) );
+		/* WordPress 5.1 */
+		add_action( 'plugin_loaded', array( $this, 'plugin' ) );
+
+		add_action( 'plugins_loaded', array( $this, 'plugins' ) );
 
 		if ( is_admin() ) {
 			add_action( 'init', array( $this, 'admin' ) );
@@ -81,13 +84,24 @@ class Loader
 	}
 
 	/**
+	 * Fires once activated plugin have loaded.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return void
+	 */
+	public function plugin()
+	{
+	}
+
+	/**
 	 * Fires once activated plugins have loaded.
 	 *
 	 * @since 1.0.0
 	 *
 	 * @return void
 	 */
-	public function loaded()
+	public function plugins()
 	{
 	}
 
@@ -96,7 +110,7 @@ class Loader
 	 *
 	 * @since 1.0.0
 	 *
-	 * @return
+	 * @return string
 	 */
 	public function getFile(): string
 	{
@@ -108,7 +122,7 @@ class Loader
 	 *
 	 * @since 1.0.0
 	 *
-	 * @return
+	 * @return string
 	 */
 	public function getSlug(): string
 	{
