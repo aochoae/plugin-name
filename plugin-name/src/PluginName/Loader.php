@@ -92,7 +92,7 @@ class Loader
 	}
 
 	/**
-	 * TODO
+	 * Retrieve the basename of the plugin.
 	 *
 	 * @since 1.0.0
 	 *
@@ -104,7 +104,7 @@ class Loader
 	}
 
 	/**
-	 * TODO
+	 * Retrieve the slug of the plugin.
 	 *
 	 * @since 1.0.0
 	 *
