@@ -31,15 +31,15 @@ class Loader
 	{
 		$this->plugin_file = $plugin_file;
 
-		add_action( 'init', array( $this, 'loadTextdomain' ) );
+		add_action( 'init', [ $this, 'loadTextdomain' ] );
 
 		/* WordPress 5.1 */
-		add_action( 'plugin_loaded', array( $this, 'plugin' ) );
+		add_action( 'plugin_loaded', [ $this, 'plugin' ] );
 
-		add_action( 'plugins_loaded', array( $this, 'plugins' ) );
+		add_action( 'plugins_loaded', [ $this, 'plugins' ] );
 
 		if ( is_admin() ) {
-			add_action( 'init', array( $this, 'admin' ) );
+			add_action( 'init', [ $this, 'admin' ] );
 		}
 	}
 
