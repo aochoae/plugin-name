@@ -7,6 +7,6 @@
   "minimum-stability": "dev",
   "keywords": [ "wordpress", "plugin", "boilerplate" ],
   "require": {
-    "php": ">=7.0"
+    "php": ">=7.1"
   }
 }
