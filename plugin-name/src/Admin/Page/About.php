@@ -5,6 +5,11 @@
 
 namespace PluginName\Admin\Page;
 
+/**
+ * About class.
+ *
+ * @since 1.0.0
+ */
 class About
 {
 	/**

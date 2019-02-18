@@ -14,12 +14,36 @@ use PluginName\Admin\Admin;
  */
 class Loader
 {
+	/**
+	 * Plugin version
+	 *
+	 * @since 1.0.0
+	 * @var string
+	 */
 	const VERSION = '1.0.0';
 
+	/**
+	 * The path to a plugin main file
+	 *
+	 * @since 1.0.0
+	 * @var string
+	 */
 	private $plugin_file = '';
 
+	/**
+	 * The slug of the plugin
+	 *
+	 * @since 1.0.0
+	 * @var string
+	 */
 	private $plugin_slug = '';
 
+	/**
+	 * Singleton instance
+	 *
+	 * @since 1.0.0
+	 * @var Loader
+	 */
 	private static $instance;
 
 	/**

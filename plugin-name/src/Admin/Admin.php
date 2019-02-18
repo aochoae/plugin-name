@@ -8,11 +8,31 @@ namespace PluginName\Admin;
 use PluginName\Loader as Plugin;
 use PluginName\Admin\Page\Settings;
 
+/**
+ * Admin class.
+ *
+ * @since 1.0.0
+ */
 class Admin
 {
+	/**
+	 * @since 1.0.0
+	 * @var string
+	 */
 	private $plugin_file = null;
+
+	/**
+	 * @since 1.0.0
+	 * @var string
+	 */
 	private $plugin_slug = null;
 
+	/**
+	 * Singleton instance
+	 *
+	 * @since 1.0.0
+	 * @var Admin
+	 */
 	private static $instance;
 
 	/**

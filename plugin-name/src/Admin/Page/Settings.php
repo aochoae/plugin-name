@@ -5,6 +5,11 @@
 
 namespace PluginName\Admin\Page;
 
+/**
+ * Settings class.
+ *
+ * @since 1.0.0
+ */
 class Settings
 {
 	/**
