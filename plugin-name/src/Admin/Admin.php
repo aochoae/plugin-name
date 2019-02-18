@@ -6,6 +6,7 @@
 namespace PluginName\Admin;
 
 use PluginName\Loader as Plugin;
+use PluginName\Admin\Page\Settings;
 
 class Admin
 {
@@ -45,7 +46,7 @@ class Admin
 	}
 
 	/**
-	 * Add Settings link to plugins area.
+	 * Adds Settings link to plugins area.
 	 *
 	 * @since 1.0.0
 	 */
@@ -76,7 +77,7 @@ class Admin
 	}
 
 	/**
-	 * Add the admin menus.
+	 * Adds the admin menus.
 	 *
 	 * @since 1.0.0
 	 */
@@ -99,10 +100,12 @@ class Admin
 			esc_html__( 'Plugin Name', 'plugin-name' ),
 			'manage_options',
 			$settings_slug,
-			[ $this, 'settings' ],
+			[ 'PluginName\Admin\Page\Settings', 'render' ],
 			'dashicons-smiley',
 			35
 		);
+
+		add_action( "load-$settings", [ 'PluginName\Admin\Page\Settings', 'help' ] );
 
 		$about_slug = sprintf( '%s/about.php', $this->plugin_slug );
 
@@ -112,35 +115,7 @@ class Admin
 			esc_html__( 'About', 'plugin-name' ),
 			'manage_options',
 			$about_slug,
-			[ $this, 'about' ]
+			[ 'PluginName\Admin\Page\About', 'render' ]
 		);
-	}
-
-	/**
-	 * The main settings page.
-	 *
-	 * @since 1.0.0
-	 */
-	public function settings(): void
-	{
-	?>
-        <div class="wrap">
-            <h1 class="wp-heading-inline"><?php esc_html_e( 'Plugin Name', 'plugin-name' ); ?></h1>
-		</div>
-	<?php
-	}
-
-	/**
-	 * The main settings page
-	 *
-	 * @since 1.0.0
-	 */
-	public function about(): void
-	{
-	?>
-        <div class="wrap">
-            <h1 class="wp-heading-inline"><?php esc_html_e( 'About', 'plugin-name' ); ?></h1>
-		</div>
-	<?php
 	}
 }
