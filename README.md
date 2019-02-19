@@ -6,6 +6,12 @@
 
 ## Composer
 
+Stable
+
+    composer create-project arya/wordpress-plugin DIRECTORY 1.0.*
+
+Master branch
+
     composer create-project --no-install --remove-vcs arya/wordpress-plugin DIRECTORY dev-master
 
 ## Docker (18.06.0+)
