@@ -25,3 +25,7 @@ Stop and remove containers, networks, images, and volumes
 
     docker-compose down --volumes
 
+## License
+
+This project is licensed under the GNU General Public License, Version 2.0.
+See [LICENSE](LICENSE) for the full license text.
