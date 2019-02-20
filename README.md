@@ -8,7 +8,7 @@
 
 Stable
 
-    composer create-project arya/wordpress-plugin DIRECTORY 1.0.*
+    composer create-project arya/wordpress-plugin DIRECTORY 1.1.*
 
 Master branch
 
