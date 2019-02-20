@@ -17,7 +17,7 @@ class About
 	 *
 	 * @since 1.0.0
 	 */
-	public static function render()
+	public static function render(): void
 	{
 	?>
 		<div class="wrap">
