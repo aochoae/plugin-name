@@ -4,6 +4,11 @@
 
 * [PSR-4: Autoloader](https://www.php-fig.org/psr/psr-4/)
 
+## Requirements
+
+* PHP version 7.0 or greater
+* WordPress 5.0 or greater
+
 ## Composer
 
 Stable
