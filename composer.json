@@ -6,6 +6,11 @@
   "license": "GPL-2.0-or-later",
   "minimum-stability": "dev",
   "keywords": [ "wordpress", "plugin", "boilerplate" ],
+  "autoload": {
+    "psr-4": {
+      "PluginName\\": "plugin-name/src/"
+    }
+  },
   "require": {
     "php": ">=7.1"
   },
