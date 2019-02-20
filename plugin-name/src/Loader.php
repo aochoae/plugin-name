@@ -31,14 +31,6 @@ class Loader
 	private $plugin_file = '';
 
 	/**
-	 * The slug of the plugin
-	 *
-	 * @since 1.0.0
-	 * @var string
-	 */
-	private $plugin_slug = '';
-
-	/**
 	 * Singleton instance
 	 *
 	 * @since 1.0.0
