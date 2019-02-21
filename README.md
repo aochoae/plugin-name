@@ -1,21 +1,15 @@
 # WordPress Plugin Boilerplate
 
-## Features
-
-* [PSR-4: Autoloader](https://www.php-fig.org/psr/psr-4/)
-
-## Requirements
+# Requirements
 
 * PHP version 7.1 or greater
 * WordPress 5.0 or greater
 
+## Features
+
+* [PSR-4: Autoloader](https://www.php-fig.org/psr/psr-4/)
+
 ## Composer
-
-Stable
-
-    composer create-project arya/wordpress-plugin DIRECTORY 1.1.*
-
-Master branch
 
     composer create-project --no-install --remove-vcs arya/wordpress-plugin DIRECTORY dev-master
 

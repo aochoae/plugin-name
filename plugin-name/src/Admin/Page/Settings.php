@@ -17,7 +17,7 @@ class Settings
 	 *
 	 * @since 1.0.0
 	 */
-	public static function render(): void
+	public static function render()
 	{
 	?>
 		<div class="wrap">
@@ -31,7 +31,7 @@ class Settings
 	 *
 	 * @since 1.0.0
 	 */
-	public static function help(): void
+	public static function help()
 	{
 		$screen = get_current_screen();
         

@@ -82,7 +82,7 @@ class Loader
 	 *
 	 * @return void
 	 */
-	public function loadTextdomain(): void
+	public function loadTextdomain()
 	{
 		load_plugin_textdomain( 'plugin-name', false, dirname( plugin_basename( $this->plugin_file ) ) . '/languages' );
 	}
@@ -94,7 +94,7 @@ class Loader
 	 *
 	 * @return void
 	 */
-	public function admin(): void
+	public function admin()
 	{
 		Admin::init( $this );
 	}
@@ -106,7 +106,7 @@ class Loader
 	 *
 	 * @return void
 	 */
-	public function plugin(): void
+	public function plugin()
 	{
 	}
 
@@ -117,7 +117,7 @@ class Loader
 	 *
 	 * @return void
 	 */
-	public function plugins(): void
+	public function plugins()
 	{
 	}
 
