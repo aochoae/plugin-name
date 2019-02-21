@@ -70,7 +70,7 @@ class Admin
 	 *
 	 * @since 1.0.0
 	 */
-	public function action(): void
+	public function action()
 	{
 		add_filter( 'plugin_action_links', function( $actions, $plugin_file, $plugin_data, $context ) {
 
@@ -101,7 +101,7 @@ class Admin
 	 *
 	 * @since 1.0.0
 	 */
-	public function menu(): void
+	public function menu()
 	{
 		global $menu;
 
