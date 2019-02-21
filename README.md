@@ -2,7 +2,7 @@
 
 # Requirements
 
-* PHP version 7.1 or greater
+* PHP version 7.0 or greater
 * WordPress 5.0 or greater
 
 ## Features
