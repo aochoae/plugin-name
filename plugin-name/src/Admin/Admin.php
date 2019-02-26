@@ -122,7 +122,7 @@ class Admin
             $settings_slug,
             [ 'PluginName\Admin\Page\Settings', 'render' ],
             'dashicons-smiley',
-            35
+            '99.074074'
         );
 
         add_action( "load-$settings", [ 'PluginName\Admin\Page\Settings', 'help' ] );
