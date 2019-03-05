@@ -5,7 +5,7 @@
 
 namespace PluginName\Admin;
 
-use PluginName\Loader as Plugin;
+use PluginName\Loader;
 use PluginName\Admin\Page\Settings;
 
 /**
@@ -40,10 +40,10 @@ class Admin
      *
      * @since 1.0.0
      */
-    private function __construct( Plugin $plugin )
+    private function __construct( Loader $loader )
     {
-        $this->plugin_file = $plugin->getFile();
-        $this->plugin_slug = $plugin->getSlug();
+        $this->plugin_file = $loader->getFile();
+        $this->plugin_slug = $loader->getSlug();
 
         add_action( 'admin_init', [ $this, 'action' ] );
         add_action( 'admin_menu', [ $this, 'menu' ] );
@@ -56,10 +56,10 @@ class Admin
      *
      * @return Admin
      */
-    public static function init( Plugin $plugin ): Admin
+    public static function init( Loader $loader ): Admin
     {
         if ( ! isset( self::$instance ) ) {
-            self::$instance = new Admin( $plugin );
+            self::$instance = new Admin( $loader );
         }
 
         return self::$instance;
@@ -103,7 +103,7 @@ class Admin
      */
     public function menu()
     {
-        global $menu;
+        global $menu, $submenu;
 
         $menu[35] = [
             0 => '',
@@ -137,5 +137,7 @@ class Admin
             $about_slug,
             [ 'PluginName\Admin\Page\About', 'render' ]
         );
+        
+        $submenu[ $settings_slug ][0][0] = esc_html_x( 'General', 'settings screen', 'plugin-name' );
     }
 }
