@@ -3,6 +3,13 @@
     "type": "project",
     "description": "WordPress Plugin Boilerplate",
     "version": "1.0.0",
+    "authors": [
+        {
+             "name": "Your Name",
+             "homepage": "https://example.com",
+             "role": "Developer"
+        }
+    ],
     "license": "GPL-2.0-or-later",
     "minimum-stability": "dev",
     "keywords": [ "wordpress", "plugin", "boilerplate" ],
