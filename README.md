@@ -15,7 +15,7 @@
 
     composer create-project --no-install --remove-vcs arya/wordpress-plugin DIRECTORY dev-master
 
-## Docker (18.06.0+)
+## Docker (18.06.0 or greater)
 
 Create and start the container
 

@@ -13,6 +13,7 @@ services:
       MYSQL_PASSWORD: wordpress
 
   wordpress:
+    container_name: plugin-name
     depends_on:
       - db
     image: wordpress:5.0-php7.0-apache
@@ -30,6 +31,7 @@ services:
 
     volumes:
       - ./plugin-name:/var/www/html/wp-content/plugins/plugin-name
+      - ./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
 
 volumes:
   db_data:
