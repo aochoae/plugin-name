@@ -19,10 +19,25 @@ class Settings
      */
     public static function render()
     {
-    ?>
+        if ( ! current_user_can( 'manage_options' ) ) {
+            return;
+        }
+        ?>
+
         <div class="wrap">
+
+            <?php settings_errors(); ?>
+
             <h1 class="wp-heading-inline"><?php esc_html_e( 'Plugin Name', 'plugin-name' ); ?></h1>
+
+            <form action="<?php echo admin_url( 'options.php' ); ?>" method="post">
+
+                <?php submit_button(); ?>
+
+            </form>
+
         </div>
+
     <?php
     }
 
