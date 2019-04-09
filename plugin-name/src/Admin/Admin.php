@@ -45,8 +45,8 @@ class Admin
         $this->plugin_file = $loader->getFile();
         $this->plugin_slug = $loader->getSlug();
 
-        add_action( 'admin_init', [ $this, 'action' ] );
         add_action( 'admin_menu', [ $this, 'menu' ] );
+        add_action( 'admin_init', [ $this, 'action' ] );
     }
 
     /**
@@ -63,6 +63,56 @@ class Admin
         }
 
         return self::$instance;
+    }
+
+    /**
+     * Adds the admin menus.
+     *
+     * @since 1.0.0
+     */
+    public function menu()
+    {
+        global $menu, $submenu;
+
+        $menu[35] = [
+            0 => '',
+            1 => 'read',
+            2 => 'separator35',
+            3 => '',
+            4 => 'wp-menu-separator'
+        ];
+
+        /* General settings */
+        $settings_slug = sprintf( '%s/settings.php', $this->plugin_slug );
+
+        $settings_page = Settings::init( $settings_slug );
+
+        $settings = add_menu_page(
+            esc_html__( 'Plugin Name Settings', 'plugin-name' ),
+            esc_html__( 'Plugin Name', 'plugin-name' ),
+            'manage_options',
+            $settings_slug,
+            [ $settings_page, 'render' ],
+            'dashicons-smiley',
+            '99.074074'
+        );
+
+        add_action( "load-$settings", [ $settings_page, 'help' ] );
+
+        /* About page */
+        $about_slug = sprintf( '%s/about.php', $this->plugin_slug );
+
+        $about = add_submenu_page(
+            $settings_slug,
+            esc_html__( 'About Plugin Name', 'plugin-name' ),
+            esc_html__( 'About', 'plugin-name' ),
+            'manage_options',
+            $about_slug,
+            [ 'PluginName\Admin\Page\About', 'render' ]
+        );
+
+        /* Changes the string of the submenu */
+        $submenu[ $settings_slug ][0][0] = esc_html_x( 'General', 'settings screen', 'plugin-name' );
     }
 
     /**
@@ -94,50 +144,5 @@ class Admin
 
             return array_merge( $actions, $new_actions );
         }, 10, 4 );
-    }
-
-    /**
-     * Adds the admin menus.
-     *
-     * @since 1.0.0
-     */
-    public function menu()
-    {
-        global $menu, $submenu;
-
-        $menu[35] = [
-            0 => '',
-            1 => 'read',
-            2 => 'separator35',
-            3 => '',
-            4 => 'wp-menu-separator'
-        ];
-
-        $settings_slug = sprintf( '%s/settings.php', $this->plugin_slug );
-        
-        $settings = add_menu_page(
-            esc_html__( 'Plugin Name Settings', 'plugin-name' ),
-            esc_html__( 'Plugin Name', 'plugin-name' ),
-            'manage_options',
-            $settings_slug,
-            [ 'PluginName\Admin\Page\Settings', 'render' ],
-            'dashicons-smiley',
-            '99.074074'
-        );
-
-        add_action( "load-$settings", [ 'PluginName\Admin\Page\Settings', 'help' ] );
-
-        $about_slug = sprintf( '%s/about.php', $this->plugin_slug );
-
-        $about = add_submenu_page(
-            $settings_slug,
-            esc_html__( 'About Plugin Name', 'plugin-name' ),
-            esc_html__( 'About', 'plugin-name' ),
-            'manage_options',
-            $about_slug,
-            [ 'PluginName\Admin\Page\About', 'render' ]
-        );
-        
-        $submenu[ $settings_slug ][0][0] = esc_html_x( 'General', 'settings screen', 'plugin-name' );
     }
 }
