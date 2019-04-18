@@ -13,12 +13,6 @@ namespace PluginName\Admin\Page;
 class Settings
 {
     /**
-     * @since 1.0.0
-     * @var string
-     */
-    private $page = '';
-
-    /**
      * Singleton instance
      *
      * @since 1.0.0
@@ -31,10 +25,8 @@ class Settings
      *
      * @since 1.0.0
      */
-    private function __construct( $page )
+    private function __construct()
     {
-        $this->page = $page;
-
         add_action( 'admin_init', [ $this, 'settings' ] );
     }
 
@@ -45,10 +37,10 @@ class Settings
      *
      * @return Settings
      */
-    public static function init( $page ): Settings
+    public static function init(): Settings
     {
         if ( ! isset( self::$instance ) ) {
-            self::$instance = new Settings( $page );
+            self::$instance = new Settings();
         }
 
         return self::$instance;
@@ -88,7 +80,7 @@ class Settings
      *
      * @since 1.0.0
      */
-    public static function render()
+    public function render()
     {
         if ( ! current_user_can( 'manage_options' ) ) {
             return;
@@ -119,18 +111,18 @@ class Settings
      *
      * @since 1.0.0
      */
-    public static function help()
+    public function help()
     {
         $screen = get_current_screen();
 
         $screen->add_help_tab( [
             'id'      => 'id-help',
-            'title'   => "Help!",
+            'title'   => 'Help!',
             'content' => '<p><strong>Help!</strong> was nominated in the category of Album of the Year at the 1966 Grammys Awards (<a href="https://en.wikipedia.org/wiki/Help!">Wikipedia</a>).</p>'
         ] );
 
         $screen->set_help_sidebar(
-            '<p><strong>' . __( 'For more information:' ) . '</strong></p>' .
+            '<p><strong>' . __( 'For more information:', 'plugin-name' ) . '</strong></p>' .
             '<p><a href="https://developer.wordpress.org/reference/classes/wp_screen/" target="_blank">WP_Screen</p>'
         );
     }

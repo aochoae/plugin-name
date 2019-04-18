@@ -19,10 +19,14 @@ class About
      */
     public static function render()
     {
-    ?>
+        ?>
+
         <div class="wrap">
+
             <h1 class="wp-heading-inline"><?php esc_html_e( 'About', 'plugin-name' ); ?></h1>
+
         </div>
-    <?php
+
+        <?php
     }
 }

@@ -85,7 +85,7 @@ class Admin
         /* General settings */
         $settings_slug = sprintf( '%s/settings.php', $this->plugin_slug );
 
-        $settings_page = Settings::init( $settings_slug );
+        $settings_page = Settings::init();
 
         $settings = add_menu_page(
             esc_html__( 'Plugin Name Settings', 'plugin-name' ),
