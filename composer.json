@@ -16,7 +16,10 @@
     "autoload": {
         "psr-4": {
             "PluginName\\": "plugin-name/src/"
-        }
+        },
+        "files": [
+            "plugin-name/src/functions.php"
+        ]
     },
     "config": {
         "vendor-dir": "plugin-name/vendor/"
