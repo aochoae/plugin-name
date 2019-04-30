@@ -2,7 +2,7 @@
 
 Boilerplate for building WordPress plugins.
 
-# Requirements
+## Requirements
 
 * PHP version 7.0 or greater
 * WordPress 5.0 or greater
@@ -20,6 +20,8 @@ Boilerplate for building WordPress plugins.
 ### Composer
 
     composer create-project --no-install --remove-vcs arya/wordpress-plugin DIRECTORY dev-master
+
+Happy Coding!
 
 ### Docker (18.06.0 or greater)
 
