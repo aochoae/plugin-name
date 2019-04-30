@@ -17,7 +17,11 @@
  * @license   GPL-2.0-or-later
  */
 
-/* PHP namespace autoloader */
-require_once( dirname( __FILE__ ) . '/vendor/autoload.php' );
+if ( ! defined( 'PLUGIN_NAME_FILE' ) ) {
+    define( 'PLUGIN_NAME_FILE', __FILE__ );
+}
 
-\PluginName\Loader::init( plugin_basename( __FILE__ ) );
+/* PHP namespace autoloader */
+require_once( dirname( PLUGIN_NAME_FILE ) . '/vendor/autoload.php' );
+
+\PluginName\Loader::init( plugin_basename( PLUGIN_NAME_FILE ) );
