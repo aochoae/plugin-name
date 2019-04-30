@@ -14,7 +14,7 @@
  * @package   PluginName
  * @author    Your Name
  * @copyright 2019 Your Name or Company Name
- * @license   GPL-2.0+
+ * @license   GPL-2.0-or-later
  */
 
 /* PHP namespace autoloader */

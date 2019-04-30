@@ -1,5 +1,7 @@
 # WordPress Plugin Boilerplate
 
+Boilerplate for building WordPress plugins.
+
 # Requirements
 
 * PHP version 7.0 or greater
@@ -7,15 +9,19 @@
 
 ## Features
 
+### PHP Standards Recommendations
+
 * [PSR-1: Basic Coding Standard](https://www.php-fig.org/psr/psr-1/)
 * [PSR-2: Coding Style Guide](https://www.php-fig.org/psr/psr-2/)
 * [PSR-4: Autoloader](https://www.php-fig.org/psr/psr-4/)
 
-## Composer
+## Install
+
+### Composer
 
     composer create-project --no-install --remove-vcs arya/wordpress-plugin DIRECTORY dev-master
 
-## Docker (18.06.0 or greater)
+### Docker (18.06.0 or greater)
 
 Create and start the container
 
