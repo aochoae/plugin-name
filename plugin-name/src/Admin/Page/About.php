@@ -13,12 +13,48 @@ namespace PluginName\Admin\Page;
 class About
 {
     /**
+     * Singleton instance
+     *
+     * @since 1.0.0
+     * @var About
+     */
+    private static $instance;
+
+    /**
+     * Constructor.
+     *
+     * @since 1.0.0
+     */
+    private function __construct()
+    {
+    }
+
+    /**
+     * The singleton method.
+     *
+     * @since 1.0.0
+     *
+     * @return About
+     */
+    public static function init(): About
+    {
+        if ( ! isset( self::$instance ) ) {
+            self::$instance = new About();
+        }
+
+        return self::$instance;
+    }
+
+    /**
      * "About" page.
      *
      * @since 1.0.0
      */
-    public static function render()
+    public function render()
     {
+        if ( ! current_user_can( 'manage_options' ) ) {
+            return;
+        }
         ?>
 
         <div class="wrap">

@@ -102,13 +102,15 @@ class Admin
         /* About page */
         $about_slug = sprintf( '%s/about.php', $this->plugin_slug );
 
+        $about_page = Settings::init();
+
         $about = add_submenu_page(
             $settings_slug,
             esc_html__( 'About Plugin Name', 'plugin-name' ),
             esc_html__( 'About', 'plugin-name' ),
             'manage_options',
             $about_slug,
-            [ 'PluginName\Admin\Page\About', 'render' ]
+            [ $about_page, 'render' ]
         );
 
         /* Changes the string of the submenu */
