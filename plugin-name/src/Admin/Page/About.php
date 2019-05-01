@@ -60,7 +60,7 @@ class About
 
         <div class="wrap">
 
-            <h1 class="wp-heading-inline"><?php esc_html( $plugin['Name'] ); ?></h1>
+            <h1 class="wp-heading-inline"><?php echo esc_html( $plugin['Name'] ); ?></h1>
 
         </div>
 
