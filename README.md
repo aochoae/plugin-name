@@ -15,6 +15,12 @@ Boilerplate for building WordPress plugins.
 * [PSR-2: Coding Style Guide](https://www.php-fig.org/psr/psr-2/)
 * [PSR-4: Autoloader](https://www.php-fig.org/psr/psr-4/)
 
+### WordPress
+
+* Settings
+* Contextual Help
+* Plugin action links
+
 ## Install
 
 ### Composer
