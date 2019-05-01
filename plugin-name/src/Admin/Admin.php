@@ -7,6 +7,7 @@ namespace PluginName\Admin;
 
 use PluginName\Loader;
 use PluginName\Admin\Page\Settings;
+use PluginName\Admin\Page\About;
 
 /**
  * Admin class.
@@ -72,6 +73,7 @@ class Admin
      */
     public function menu()
     {
+        /* Menu */
         global $menu, $submenu;
 
         $menu[35] = [
@@ -102,7 +104,7 @@ class Admin
         /* About page */
         $about_slug = sprintf( '%s/about.php', $this->plugin_slug );
 
-        $about_page = Settings::init();
+        $about_page = About::init();
 
         $about = add_submenu_page(
             $settings_slug,

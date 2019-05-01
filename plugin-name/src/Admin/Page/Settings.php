@@ -91,7 +91,7 @@ class Settings
 
             <?php settings_errors(); ?>
 
-            <h1 class="wp-heading-inline"><?php esc_html_e( 'Plugin Name', 'plugin-name' ); ?></h1>
+            <h1 class="wp-heading-inline"><?php esc_html_e( 'General Settings', 'plugin-name' ); ?></h1>
 
             <form action="<?php echo admin_url( 'options.php' ); ?>" method="post">
 

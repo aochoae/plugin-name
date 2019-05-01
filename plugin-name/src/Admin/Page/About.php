@@ -55,11 +55,12 @@ class About
         if ( ! current_user_can( 'manage_options' ) ) {
             return;
         }
-        ?>
+
+        $plugin = get_plugin_data( PLUGIN_NAME_FILE ); ?>
 
         <div class="wrap">
 
-            <h1 class="wp-heading-inline"><?php esc_html_e( 'About', 'plugin-name' ); ?></h1>
+            <h1 class="wp-heading-inline"><?php esc_html( $plugin['Name'] ); ?></h1>
 
         </div>
 
