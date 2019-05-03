@@ -25,7 +25,27 @@ Boilerplate for building WordPress plugins.
 
 ### Composer
 
-    composer create-project --no-install --remove-vcs arya/wordpress-plugin DIRECTORY dev-master
+    composer create-project --no-install --remove-vcs arya/wordpress-plugin your-plugin dev-master
+
+You'll need to rename
+
+1. The directory `plugin-name` to `your-plugin`
+1. The file `plugin-name.php` to `your-plugin.php`
+
+Then find and replace in all the templates
+
+1. `plugin-name` to `your-plugin`
+1. `plugin_name` to `your_plugin`
+1. `PLUGIN_NAME` to `YOUR_PLUGIN`
+1. `PluginName` to `YourPlugin\\Namespace`
+
+If you are a Linux or macOS user, you can use the command `sed`
+
+    egrep -lRZ 'plugin-name' your-plugin | xargs -0 -l sed -i -e 's/plugin-name/your-plugin/g'
+
+Finally, edit the composer.json file to declare plugin dependencies
+
+    composer install
 
 Happy Coding!
 
