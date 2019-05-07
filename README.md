@@ -17,7 +17,8 @@ Boilerplate for building WordPress plugins.
 
 ### WordPress
 
-* Settings
+* Settings page
+* About page
 * Contextual Help
 * Plugin action links
 

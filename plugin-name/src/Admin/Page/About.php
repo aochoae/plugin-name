@@ -39,7 +39,7 @@ class About
     public static function init(): About
     {
         if ( ! isset( self::$instance ) ) {
-            self::$instance = new About();
+            self::$instance = new About;
         }
 
         return self::$instance;
@@ -58,12 +58,32 @@ class About
 
         $plugin = get_plugin_data( PLUGIN_NAME_FILE ); ?>
 
-        <div class="wrap">
+        <div id="about-page">
 
-            <h1 class="wp-heading-inline"><?php echo esc_html( $plugin['Name'] ); ?></h1>
+            <div id="masthead">
+                <div class="container">
+                    <h1 class="dashicons-before dashicons-smiley"><?php echo esc_html( $plugin['Name'] ); ?></h1>
+                </div>
+            </div>
+
+            <div id="content">
+                <div class="container">
+                    <h2><?php esc_html_e( 'I hope this boilerplate helps you to write the best plugin possible.', 'plugin-name' ); ?></h2>
+                </div>
+            </div>
 
         </div>
 
         <?php
+    }
+
+    /**
+     * Enqueue the admin stylesheets and scripts.
+     *
+     * @since 1.0.0
+     */
+    public function enqueue()
+    {
+        wp_enqueue_style( 'plugin-name-about', plugins_url( 'static/css/about.css', PLUGIN_NAME_FILE ), [], null, 'all' );
     }
 }

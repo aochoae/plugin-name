@@ -115,6 +115,8 @@ class Admin
             [ $about_page, 'render' ]
         );
 
+        add_action( "load-$about", [ $about_page, 'enqueue' ] );
+
         /* Changes the string of the submenu */
         $submenu[ $settings_slug ][0][0] = esc_html_x( 'General', 'settings screen', 'plugin-name' );
     }
@@ -147,6 +149,19 @@ class Admin
             $new_actions['about'] = sprintf( '<a href="%s">%s</a>', esc_url( $about ), esc_html__( 'About', 'plugin-name' ) );
 
             return array_merge( $actions, $new_actions );
+        }, 10, 4 );
+
+        add_filter( 'plugin_row_meta', function( $plugin_meta, $plugin_file, $plugin_data, $status ) {
+
+            if ( $this->plugin_file !== $plugin_file ) {
+                return $plugin_meta;
+            }
+
+            $new_meta = [
+                sprintf( '<a href="%s">%s</a>', esc_url( 'https://example.com/' ), esc_html__( 'Documentation', 'plugin-name' ) )
+            ];
+
+            return array_merge( $plugin_meta, $new_meta );
         }, 10, 4 );
     }
 }

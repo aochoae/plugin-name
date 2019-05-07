@@ -40,7 +40,7 @@ class Settings
     public static function init(): Settings
     {
         if ( ! isset( self::$instance ) ) {
-            self::$instance = new Settings();
+            self::$instance = new Settings;
         }
 
         return self::$instance;
