@@ -84,6 +84,8 @@ class About
      */
     public function enqueue()
     {
-        wp_enqueue_style( 'plugin-name-about', plugins_url( 'static/css/about.css', PLUGIN_NAME_FILE ), [], null, 'all' );
+        $stylesheet = sprintf( 'static/css/about.%s', ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? 'css' : 'min.css' );
+
+        wp_enqueue_style( 'plugin-name-about', plugins_url( $stylesheet, PLUGIN_NAME_FILE ), [], null, 'all' );
     }
 }
