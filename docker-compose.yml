@@ -24,6 +24,7 @@ services:
       WORDPRESS_DB_PASSWORD: wordpress
       WORDPRESS_DEBUG: 1
       WORDPRESS_CONFIG_EXTRA: |
+        define( 'WP_LOCAL_DEV', true );
         define( 'WP_DEBUG_LOG', true );
         define( 'SCRIPT_DEBUG', true );
 
