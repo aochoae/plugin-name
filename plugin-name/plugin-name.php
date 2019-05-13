@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Plugin Name
  * Plugin URI: https://example.com/plugin-name
- * Description: Description of the plugin.
+ * Description: I hope this boilerplate helps you to write the best plugin possible.
  * Author: Your Name
  * Author URI: https://example.com
  * Version: 1.0.0
@@ -16,6 +16,8 @@
  * @copyright 2019 Your Name or Company Name
  * @license   GPL-2.0-or-later
  */
+
+defined( 'ABSPATH' ) || exit;
 
 if ( ! defined( 'PLUGIN_NAME_FILE' ) ) {
     define( 'PLUGIN_NAME_FILE', __FILE__ );
