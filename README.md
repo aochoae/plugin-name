@@ -6,6 +6,8 @@ Boilerplate for building WordPress plugins.
 
 * PHP version 7.0 or greater
 * WordPress 5.0 or greater
+* Docker 18.06 or greater (Development)
+* Grunt 1.0.4 (Development)
 
 ## Features
 
@@ -50,7 +52,17 @@ Finally, edit the composer.json file to declare plugin dependencies
 
 Happy Coding!
 
-### Docker (18.06.0 or greater)
+### Grunt
+
+Minify resources
+
+    npm install
+    grunt
+Handle the version of the plugin
+
+    grunt version
+
+### Docker
 
 Create and start the container
 
