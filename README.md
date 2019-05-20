@@ -29,6 +29,7 @@ Boilerplate for building WordPress plugins.
 ### Composer
 
     composer create-project --no-install --remove-vcs arya/wordpress-plugin your-plugin dev-master
+    cd your-plugin
 
 You'll need to rename
 
@@ -40,11 +41,11 @@ Then find and replace in all the templates
 1. `plugin-name` to `your-plugin`
 1. `plugin_name` to `your_plugin`
 1. `PLUGIN_NAME` to `YOUR_PLUGIN`
-1. `PluginName` to `YourPlugin\\Namespace`
+1. `PluginName` to `YourPlugin` (Namespace)
 
 If you are a Linux or macOS user, you can use the command `sed`
 
-    egrep -lRZ 'plugin-name' your-plugin | xargs -0 -l sed -i -e 's/plugin-name/your-plugin/g'
+    egrep -lRZ 'plugin-name' . | xargs -0 -l sed -i -e 's/plugin-name/your-plugin/g'
 
 Finally, edit the composer.json file to declare plugin dependencies
 
@@ -58,6 +59,7 @@ Minify resources
 
     npm install
     grunt
+
 Handle the version of the plugin
 
     grunt version
@@ -67,7 +69,8 @@ Handle the version of the plugin
 Create and start the container
 
     docker-compose up -d
-    docker exec CONTAINER chown -R www-data:www-data /var/www/html
+    docker exec your-plugin chown -R www-data:www-data /var/www/html
+    sudo chown -R $USER:$USER your-plugin
 
 Stop and remove containers, networks, images, and volumes
 
