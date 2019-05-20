@@ -25,6 +25,6 @@
         "vendor-dir": "plugin-name/vendor/"
     },
     "require": {
-        "php": ">=7.0"
+        "php": "^7.0"
     }
 }
