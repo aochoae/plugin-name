@@ -1,22 +1,22 @@
 <?php
 /**
- * @package PluginName\Admin\Page
+ * @package PluginName\Admin\Settings
  */
 
-namespace PluginName\Admin\Page;
+namespace PluginName\Admin\Settings;
 
 /**
- * Settings class.
+ * General class.
  *
  * @since 1.0.0
  */
-class Settings
+class General extends AbstractPage
 {
     /**
      * Singleton instance
      *
      * @since 1.0.0
-     * @var Settings
+     * @var General
      */
     private static $instance;
 
@@ -35,12 +35,12 @@ class Settings
      *
      * @since 1.0.0
      *
-     * @return Settings
+     * @return General
      */
-    public static function init(): Settings
+    public static function newInstance(): General
     {
         if ( ! isset( self::$instance ) ) {
-            self::$instance = new Settings;
+            self::$instance = new General;
         }
 
         return self::$instance;
@@ -53,7 +53,7 @@ class Settings
      */
     public function settings()
     {
-        /* Settings */
+        /* General */
         $args = [
             'type'              => 'string',
             'sanitize_callback' => [ $this, 'sanitize' ],
@@ -76,7 +76,7 @@ class Settings
     }
 
     /**
-     * The main settings page.
+     * {@inheritdoc}
      *
      * @since 1.0.0
      */

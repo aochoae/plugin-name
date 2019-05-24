@@ -6,8 +6,8 @@
 namespace PluginName\Admin;
 
 use PluginName\Loader;
-use PluginName\Admin\Page\Settings;
-use PluginName\Admin\Page\About;
+use PluginName\Admin\Settings\General;
+use PluginName\Admin\Settings\About;
 
 /**
  * Admin class.
@@ -57,7 +57,7 @@ class Admin
      *
      * @return Admin
      */
-    public static function init( Loader $loader ): Admin
+    public static function newInstance( Loader $loader ): Admin
     {
         if ( ! isset( self::$instance ) ) {
             self::$instance = new Admin( $loader );
@@ -85,29 +85,29 @@ class Admin
         ];
 
         /* General settings */
-        $settings_slug = sprintf( '%s/settings.php', $this->plugin_slug );
+        $general_slug = sprintf( '%s/settings.php', $this->plugin_slug );
 
-        $settings_page = Settings::init();
+        $general_page = General::newInstance();
 
-        $settings = add_menu_page(
-            esc_html__( 'Plugin Name Settings', 'plugin-name' ),
+        $general = add_menu_page(
+            esc_html__( 'General Settings', 'plugin-name' ),
             esc_html__( 'Plugin Name', 'plugin-name' ),
             'manage_options',
-            $settings_slug,
-            [ $settings_page, 'render' ],
+            $general_slug,
+            [ $general_page, 'render' ],
             'dashicons-smiley',
             '99.074074'
         );
 
-        add_action( "load-$settings", [ $settings_page, 'help' ] );
+        add_action( "load-$general", [ $general_page, 'help' ] );
 
         /* About page */
         $about_slug = sprintf( '%s/about.php', $this->plugin_slug );
 
-        $about_page = About::init();
+        $about_page = About::newInstance();
 
         $about = add_submenu_page(
-            $settings_slug,
+            $general_slug,
             esc_html__( 'About Plugin Name', 'plugin-name' ),
             esc_html__( 'About', 'plugin-name' ),
             'manage_options',
@@ -118,7 +118,7 @@ class Admin
         add_action( "load-$about", [ $about_page, 'enqueue' ] );
 
         /* Changes the string of the submenu */
-        $submenu[ $settings_slug ][0][0] = esc_html_x( 'General', 'settings screen', 'plugin-name' );
+        $submenu[ $general_slug ][0][0] = esc_html_x( 'General', 'settings screen', 'plugin-name' );
     }
 
     /**

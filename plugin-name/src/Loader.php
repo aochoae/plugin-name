@@ -66,7 +66,7 @@ class Loader
      *
      * @return Loader
      */
-    public static function init( $plugin_file ): Loader
+    public static function newInstance( $plugin_file ): Loader
     {
         if ( ! isset( self::$instance ) ) {
             self::$instance = new Loader( $plugin_file );
@@ -96,7 +96,7 @@ class Loader
      */
     public function admin()
     {
-        Admin::init( $this );
+        Admin::newInstance( $this );
     }
 
     /**

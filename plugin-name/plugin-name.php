@@ -26,4 +26,4 @@ if ( ! defined( 'PLUGIN_NAME_FILE' ) ) {
 /* PHP namespace autoloader */
 require_once( dirname( PLUGIN_NAME_FILE ) . '/vendor/autoload.php' );
 
-\PluginName\Loader::init( plugin_basename( PLUGIN_NAME_FILE ) );
+\PluginName\Loader::newInstance( plugin_basename( PLUGIN_NAME_FILE ) );

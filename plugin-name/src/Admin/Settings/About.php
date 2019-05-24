@@ -1,16 +1,16 @@
 <?php
 /**
- * @package PluginName\Admin\Page
+ * @package PluginName\Admin\Settings
  */
 
-namespace PluginName\Admin\Page;
+namespace PluginName\Admin\Settings;
 
 /**
  * About class.
  *
  * @since 1.0.0
  */
-class About
+class About extends AbstractPage
 {
     /**
      * Singleton instance
@@ -36,7 +36,7 @@ class About
      *
      * @return About
      */
-    public static function init(): About
+    public static function newInstance(): About
     {
         if ( ! isset( self::$instance ) ) {
             self::$instance = new About;
@@ -46,7 +46,7 @@ class About
     }
 
     /**
-     * "About" page.
+     * {@inheritdoc}
      *
      * @since 1.0.0
      */
