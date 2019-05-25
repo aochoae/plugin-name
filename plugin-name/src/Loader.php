@@ -5,6 +5,8 @@
 
 namespace PluginName;
 
+defined( 'ABSPATH' ) || exit;
+
 use PluginName\Admin\Admin;
 
 /**

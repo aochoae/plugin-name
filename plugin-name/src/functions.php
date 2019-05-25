@@ -4,3 +4,5 @@
  */
 
 namespace PluginName;
+
+defined( 'ABSPATH' ) || exit;

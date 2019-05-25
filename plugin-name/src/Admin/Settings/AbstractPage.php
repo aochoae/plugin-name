@@ -5,6 +5,8 @@
 
 namespace PluginName\Admin\Settings;
 
+defined( 'ABSPATH' ) || exit;
+
 abstract class AbstractPage
 {
     /**
