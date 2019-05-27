@@ -48,8 +48,14 @@ class Admin
         $this->plugin_file = $loader->getFile();
         $this->plugin_slug = $loader->getSlug();
 
-        add_action( 'admin_menu', [ $this, 'menu' ] );
-        add_action( 'admin_init', [ $this, 'action' ] );
+        /* Setting for super admins and administrators */
+        if ( current_user_can( 'manage_options' ) ) {
+            add_action( 'admin_menu', [ $this, 'menu'   ] );
+            add_action( 'admin_init', [ $this, 'action' ] );
+        }
+
+        /* Setting for users with other roles and capabilities */
+        //add_action( 'admin_menu', [ $this, 'foo' ] );
     }
 
     /**
