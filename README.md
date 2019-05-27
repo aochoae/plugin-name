@@ -1,3 +1,7 @@
+<p align="center">
+  <img src=".github/screenshot.png" alt="Boilerplate for building WordPress plugins.">
+</p>
+
 # WordPress Plugin Boilerplate
 
 Boilerplate for building WordPress plugins.
@@ -55,9 +59,13 @@ Happy Coding!
 
 ### Grunt
 
-Minify resources
+Install Grunt
 
-    npm install
+    npm install --global grunt-cli
+    npm install --silent
+
+Build (Minify resources)
+
     grunt
 
 Handle the version of the plugin
