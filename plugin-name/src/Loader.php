@@ -86,7 +86,7 @@ class Loader
      */
     public function loadTextdomain()
     {
-        load_plugin_textdomain( 'plugin-name', false, dirname( plugin_basename( $this->plugin_file ) ) . '/languages' );
+        load_plugin_textdomain( 'plugin-name', false, dirname( $this->plugin_file ) . '/languages' );
     }
 
     /**
