@@ -5,8 +5,6 @@
 
 namespace PluginName\Admin;
 
-defined( 'ABSPATH' ) || exit;
-
 use PluginName\Loader;
 use PluginName\Admin\Settings\General;
 use PluginName\Admin\Settings\About;
@@ -45,6 +43,7 @@ class Admin
      */
     private function __construct( Loader $loader )
     {
+        /* Properties */
         $this->plugin_file = $loader->getFile();
         $this->plugin_slug = $loader->getSlug();
 

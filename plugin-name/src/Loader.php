@@ -5,10 +5,6 @@
 
 namespace PluginName;
 
-defined( 'ABSPATH' ) || exit;
-
-use PluginName\Admin\Admin;
-
 /**
  * Hook the WordPress plugin into the appropriate WordPress actions and filters.
  *
@@ -51,14 +47,12 @@ class Loader
 
         add_action( 'init', [ $this, 'loadTextdomain' ] );
 
+        add_action( 'init', [ $this, 'admin' ] );
+
         /* WordPress 5.1 */
         add_action( 'plugin_loaded', [ $this, 'plugin' ] );
 
         add_action( 'plugins_loaded', [ $this, 'plugins' ] );
-
-        if ( is_admin() ) {
-            add_action( 'init', [ $this, 'admin' ] );
-        }
     }
 
     /**
@@ -98,7 +92,25 @@ class Loader
      */
     public function admin()
     {
-        Admin::newInstance( $this );
+        /**
+         * Do not show the admin toolbar if the current user is not allowed to
+         * access WordPress administration
+         */
+        if ( ! current_user_can( 'edit_posts' ) ) {
+            add_filter( 'show_admin_bar', '__return_false' );
+        }
+
+        /* Administration functionalities */
+        if ( is_admin() ) {
+
+            /* Prevents access to administration */
+            if ( ! current_user_can( 'edit_posts' ) ) {
+                wp_safe_redirect( esc_url( get_home_url() ) );
+                exit;
+            }
+
+            \PluginName\Admin\Admin::newInstance( $this );
+        }
     }
 
     /**

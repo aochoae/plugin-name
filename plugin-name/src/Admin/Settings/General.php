@@ -5,8 +5,6 @@
 
 namespace PluginName\Admin\Settings;
 
-defined( 'ABSPATH' ) || exit;
-
 /**
  * General class.
  *
