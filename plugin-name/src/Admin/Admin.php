@@ -47,6 +47,9 @@ class Admin
         $this->plugin_file = $loader->getFile();
         $this->plugin_slug = $loader->getSlug();
 
+        /* Prevents access to administration */
+        add_action( 'admin_menu', [ $this, 'init' ] );
+
         /* Setting for super admins and administrators */
         if ( current_user_can( 'manage_options' ) ) {
             add_action( 'admin_menu', [ $this, 'menu'   ] );
@@ -71,6 +74,19 @@ class Admin
         }
 
         return self::$instance;
+    }
+
+    /**
+     * Prevents access to administration.
+     *
+     * @since 1.0.0
+     */
+    public function init()
+    {
+        if ( ! current_user_can( 'edit_posts' ) ) {
+            wp_safe_redirect( esc_url( get_home_url() ) );
+            exit;
+        }
     }
 
     /**

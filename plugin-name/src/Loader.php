@@ -102,13 +102,6 @@ class Loader
 
         /* Administration functionalities */
         if ( is_admin() ) {
-
-            /* Prevents access to administration */
-            if ( ! current_user_can( 'edit_posts' ) ) {
-                wp_safe_redirect( esc_url( get_home_url() ) );
-                exit;
-            }
-
             \PluginName\Admin\Admin::newInstance( $this );
         }
     }
