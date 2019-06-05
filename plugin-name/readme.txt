@@ -38,6 +38,21 @@ Asterisks for *emphasis*.
 Double it up  for **strong**.
 
 == Installation ==
+
+= Minimum Requirements =
+
+* WordPress 5.0 or greater
+* PHP 7.0 or greater
+* MySQL 5.6 or greater
+
+= Automatic installation =
+
+Automatic installation is the easiest option. Log in to your WordPress dashboard, navigate to the Plugins menu, and click "Add New"
+
+In the search field type "Plugin Name", then click "Search Plugins" Once you've found us, you can install it by click "Install Now" and WordPress will take it from there.
+
+= Manual installation =
+
 1. Upload "test-plugin.php" to the "/wp-content/plugins/" directory.
 1. Activate the plugin through the "Plugins" menu in WordPress.
 1. Place "do_action( 'plugin_name_hook' );" in your templates.
