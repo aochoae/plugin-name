@@ -83,7 +83,7 @@ class Admin
      */
     public function init()
     {
-        if ( ! current_user_can( 'edit_posts' ) ) {
+        if ( ! current_user_can( 'edit_posts' ) || wp_doing_ajax() ) {
             wp_safe_redirect( esc_url( get_home_url() ) );
             exit;
         }
