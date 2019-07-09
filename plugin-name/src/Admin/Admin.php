@@ -52,8 +52,12 @@ class Admin
 
         /* Setting for super admins and administrators */
         if ( current_user_can( 'manage_options' ) ) {
-            add_action( 'admin_menu', [ $this, 'menu'   ] );
-            add_action( 'admin_init', [ $this, 'action' ] );
+            add_action( 'admin_menu', [ $this, 'menu' ] );
+        }
+
+        /* Plugins administration functionalities */
+        if ( current_user_can( 'activate_plugins' ) ) {
+            add_action( 'admin_init', [ $this, 'plugins' ] );
         }
 
         /* Setting for users with other roles and capabilities */
@@ -149,7 +153,7 @@ class Admin
      *
      * @since 1.0.0
      */
-    public function action()
+    public function plugins()
     {
         add_filter( 'plugin_action_links', function( $actions, $plugin_file, $plugin_data, $context ) {
 
@@ -181,7 +185,8 @@ class Admin
             }
 
             $new_meta = [
-                sprintf( '<a href="%s">%s</a>', esc_url( 'https://example.com/' ), esc_html__( 'Documentation', 'plugin-name' ) )
+                sprintf( '<a href="%s">%s</a>', esc_url( 'https://example.com/' ), esc_html__( 'Documentation', 'plugin-name' ) ),
+                sprintf( '<a href="%s">%s</a>', esc_url( 'https://example.com/wiki/' ), esc_html__( 'Wiki', 'plugin-name' ) )
             ];
 
             return array_merge( $plugin_meta, $new_meta );
