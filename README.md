@@ -6,6 +6,10 @@
 
 Boilerplate for building WordPress plugins.
 
+## Fundamental
+
+* [Build seven good object-oriented habits in PHP](https://developer.ibm.com/articles/os-php-7oohabits/)
+
 ## Requirements
 
 * PHP version 7.0 or greater
