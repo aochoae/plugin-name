@@ -4,7 +4,7 @@ module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         cssmin: {
-            theme: {
+            plugin: {
                 files: [
                     {
                         expand: true,
@@ -17,7 +17,7 @@ module.exports = function(grunt) {
             }
         },
         uglify: {
-            theme: {
+            plugin: {
                 files: [
                     {
                         expand: true,
