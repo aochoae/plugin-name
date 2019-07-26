@@ -112,7 +112,7 @@ class Admin
         ];
 
         /* General settings */
-        $general_slug = sprintf( '%s/settings.php', $this->plugin_slug );
+        $general_slug = sanitize_key( sprintf( '%s-settings', $this->plugin_slug ) );
 
         $general_page = General::newInstance();
 
@@ -129,7 +129,7 @@ class Admin
         add_action( "load-$general", [ $general_page, 'help' ] );
 
         /* About page */
-        $about_slug = sprintf( '%s/about.php', $this->plugin_slug );
+        $about_slug = sanitize_key( sprintf( '%s-about', $this->plugin_slug ) );
 
         $about_page = About::newInstance();
 
@@ -164,13 +164,13 @@ class Admin
             $new_actions = [];
 
             $settings = add_query_arg( [
-                'page' => sprintf( '%s/settings.php', $this->plugin_slug )
+                'page' => sanitize_key( sprintf( '%s-settings', $this->plugin_slug ) )
             ], network_admin_url( 'admin.php' ) );
 
             $new_actions['settings'] = sprintf( '<a href="%s">%s</a>', esc_url( $settings ), esc_html__( 'Settings', 'plugin-name' ) );
 
             $about = add_query_arg( [
-                'page' => sprintf( '%s/about.php', $this->plugin_slug )
+                'page' => sanitize_key( sprintf( '%s-about', $this->plugin_slug ) )
             ], network_admin_url( 'admin.php' ) );
 
             $new_actions['about'] = sprintf( '<a href="%s">%s</a>', esc_url( $about ), esc_html__( 'About', 'plugin-name' ) );
