@@ -93,7 +93,7 @@ class General extends AbstractPage
 
             <h1 class="wp-heading-inline"><?php esc_html_e( 'General Settings', 'plugin-name' ); ?></h1>
 
-            <form action="<?php echo admin_url( 'options.php' ); ?>" method="post">
+            <form action="<?php echo esc_url( admin_url( 'options.php' ) ); ?>" method="post">
 
                 <?php settings_fields( 'plugin_name_general' ); ?>
 
