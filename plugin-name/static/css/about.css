@@ -9,17 +9,15 @@ body[class*='plugin-name-about'] #wpcontent {
 
 body[class*='plugin-name-about'] #masthead {
     background-color: #fff;
-    text-align: center;
     box-shadow: 0 1px 0 rgba(213, 213, 213, 0.5), 0 1px 2px #eee;
 }
 
-body[class*='plugin-name-about'] #masthead .container,
-body[class*='plugin-name-about'] #content .container {
+body[class*='plugin-name-about'] #masthead .container {
     display: flex;
     flex-wrap: wrap;
-    margin: 0 auto;
+    margin: 0 20px;
     max-width: 65rem;
-    padding: 0.5rem 0;
+    padding: 5px 20px;
 }
 
 body[class*='plugin-name-about'] #masthead h1 {
@@ -37,9 +35,8 @@ body[class*='plugin-name-about'] #masthead h1.dashicons-before::before {
 
 body[class*='plugin-name-about'] #content {
     background-color: #fff;
-    margin: 40px auto;
-    max-width: 65rem;
-    padding: 1.5rem;
+    margin: 20px;
+    padding: 1rem;
     box-shadow: 0 0 0 1px rgba(213, 213, 213, 0.5), 0 1px 2px #eee;
 }
 
@@ -50,5 +47,20 @@ body[class*='plugin-name-about'] #content h2 {
     line-height: 1.5;
     margin: 0 auto;
     text-align: center;
-    width: 50%;
+}
+
+/**
+ * Large devices (desktops, 992px and up)
+ */
+@media (min-width: 992px) {
+
+    body[class*='plugin-name-about'] #masthead .container {
+        margin: 0 auto;
+        max-width: 992px;
+    }
+
+    body[class*='plugin-name-about'] #content {
+        margin: 20px auto;
+        max-width: 992px;
+    }
 }

@@ -84,8 +84,8 @@ class About extends AbstractPage
      */
     public function enqueue()
     {
-        $stylesheet = sprintf( 'static/css/about.%s', ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? 'css' : 'min.css' );
+        $suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 
-        wp_enqueue_style( 'plugin-name-about', plugins_url( $stylesheet, PLUGIN_NAME_FILE ), [], null, 'all' );
+        wp_enqueue_style( 'plugin-name-about', plugins_url( "static/css/about$suffix.css", PLUGIN_NAME_FILE ), [], null, 'all' );
     }
 }
