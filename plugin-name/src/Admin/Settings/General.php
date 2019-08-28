@@ -53,14 +53,21 @@ class General extends AbstractPage
      */
     public function settings()
     {
-        /* General */
-        $args = [
+        $option = [
             'type'              => 'string',
             'sanitize_callback' => [ $this, 'sanitize' ],
             'show_in_rest'      => false,
             'default'           => []
         ];
-        register_setting( 'plugin_name_general', 'plugin_name_general', $args );
+        register_setting( 'plugin_name_general', 'plugin_name_option', $option );
+
+        $another_option = [
+            'type'              => 'string',
+            'sanitize_callback' => 'sanitize_text_field',
+            'show_in_rest'      => false,
+            'default'           => ''
+        ];
+        register_setting( 'plugin_name_general', 'plugin_name_another_option', $another_option );
     }
 
     /**
