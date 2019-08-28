@@ -57,7 +57,7 @@ If you are a Linux or macOS user, you can use the command `sed`
 
 Finally, edit the composer.json file to declare plugin dependencies
 
-    composer install
+    composer install --prefer-dist
 
 Happy Coding!
 
