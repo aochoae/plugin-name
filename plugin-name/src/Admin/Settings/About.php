@@ -56,7 +56,7 @@ class About extends AbstractPage
             return;
         }
 
-        $plugin = get_plugin_data( PLUGIN_NAME_FILE ); ?>
+        $plugin = get_plugin_data( PLUGIN_NAME_FILE, false ); ?>
 
         <div id="about-page">
 
@@ -68,7 +68,7 @@ class About extends AbstractPage
 
             <div id="content">
                 <div class="container">
-                    <h2><?php esc_html_e( 'I hope this boilerplate helps you to write the best plugin possible.', 'plugin-name' ); ?></h2>
+                    <h2><?php echo wp_kses_post( $plugin['Description'] ); ?></h2>
                 </div>
             </div>
 
@@ -86,6 +86,10 @@ class About extends AbstractPage
     {
         $suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 
-        wp_enqueue_style( 'plugin-name-about', plugins_url( "static/css/about$suffix.css", PLUGIN_NAME_FILE ), [], null, 'all' );
+        wp_enqueue_style( 'plugin-name-about',
+            plugins_url( "static/css/about$suffix.css", PLUGIN_NAME_FILE ),
+            [],
+            null
+        );
     }
 }
