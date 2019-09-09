@@ -56,6 +56,28 @@ class Loader
     }
 
     /**
+     * Cloning is forbidden.
+     *
+     * @since 1.0.0
+     */
+    public function __clone() {
+        if ( WP_DEBUG ) {
+            trigger_error( __( 'Cloning is forbidden.', 'plugin-name' ), E_USER_ERROR );
+        }
+    }
+
+    /**
+     * Unserializing instances of this class is forbidden.
+     *
+     * @since 1.0.0
+     */
+    public function __wakeup() {
+        if ( WP_DEBUG ) {
+            trigger_error( __( 'Unserializing instances of this class is forbidden.', 'plugin-name' ), E_USER_ERROR );
+        }
+    }
+
+    /**
      * The singleton method.
      *
      * @since 1.0.0
