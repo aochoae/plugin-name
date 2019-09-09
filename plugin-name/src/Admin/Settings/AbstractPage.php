@@ -5,6 +5,11 @@
 
 namespace PluginName\Admin\Settings;
 
+/**
+ * AbstractPage class
+ *
+ * @since 1.0.0
+ */
 abstract class AbstractPage
 {
     /**

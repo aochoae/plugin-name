@@ -60,7 +60,8 @@ class Loader
      *
      * @since 1.0.0
      */
-    public function __clone() {
+    public function __clone()
+    {
         if ( WP_DEBUG ) {
             trigger_error( __( 'Cloning is forbidden.', 'plugin-name' ), E_USER_ERROR );
         }
@@ -71,7 +72,8 @@ class Loader
      *
      * @since 1.0.0
      */
-    public function __wakeup() {
+    public function __wakeup()
+    {
         if ( WP_DEBUG ) {
             trigger_error( __( 'Unserializing instances of this class is forbidden.', 'plugin-name' ), E_USER_ERROR );
         }

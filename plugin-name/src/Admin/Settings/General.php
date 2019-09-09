@@ -124,13 +124,13 @@ class General extends AbstractPage
 
         $tab = [
             'id'       => 'id-help',
-            'title'    => esc_html__( 'Help!', 'plugin-name' ),
+            'title'    => __( 'Help!', 'plugin-name' ),
             'priority' => 10,
             'content'  => '<p><strong>Help!</strong> was nominated in the category of Album of the Year at the 1966 Grammys Awards (<a href="https://en.wikipedia.org/wiki/Help!">Wikipedia</a>).</p>'
         ];
         $screen->add_help_tab( $tab );
 
-        $sidebar = '<p><strong>' . esc_html__( 'For more information:', 'plugin-name' ) . '</strong></p>' .
+        $sidebar = '<p><strong>' . __( 'For more information:', 'plugin-name' ) . '</strong></p>' .
             '<p><a href="https://developer.wordpress.org/reference/classes/wp_screen/" target="_blank">WP_Screen</a></p>';
         $screen->set_help_sidebar( $sidebar );
     }
