@@ -44,6 +44,12 @@ module.exports = function(grunt) {
                     prefix: 'const VERSION\\s+=\\s+[\'"]'
                 },
                 src: ['<%= pkg.name %>/src/Loader.php']
+            },
+            readme: {
+                options: {
+                    prefix: 'Stable tag:\\s+'
+                },
+                src: ['<%= pkg.name %>/readme.txt']
             }
         }
     });
