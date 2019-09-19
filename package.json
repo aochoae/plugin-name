@@ -1,6 +1,8 @@
 {
     "name": "plugin-name",
     "version": "1.0.0",
+    "description": "I hope this boilerplate helps you to write the best plugin possible.",
+    "homepage": "https://example.com/plugin-name",
     "license": "GPL-2.0-or-later",
     "private": true,
     "devDependencies": {
