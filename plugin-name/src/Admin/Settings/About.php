@@ -39,7 +39,7 @@ class About extends AbstractPage
     public static function newInstance(): About
     {
         if ( ! isset( self::$instance ) ) {
-            self::$instance = new About;
+            self::$instance = new About();
         }
 
         return self::$instance;
