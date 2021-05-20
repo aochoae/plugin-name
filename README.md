@@ -14,8 +14,8 @@ Boilerplate for building WordPress plugins.
 
 * PHP version 7.0 or greater
 * WordPress 5.0 or greater
-* Docker 18.06 or greater (Development)
-* Grunt 1.0.4 (Development)
+* Docker 20.10 or greater (Development)
+* Grunt 1.4.0 (Development)
 
 ## Features
 
@@ -80,13 +80,11 @@ Handle the version of the plugin
 
 Create and start the container
 
-    docker-compose up -d
-    docker exec your-plugin chown -R www-data:www-data /var/www/html
-    sudo chown -R $USER:$USER your-plugin
+    docker compose up -d
 
 Stop and remove containers, networks, images, and volumes
 
-    docker-compose down --volumes
+    docker compose down --volumes
 
 ## License
 
