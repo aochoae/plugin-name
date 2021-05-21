@@ -13,7 +13,7 @@
  *
  * @package   PluginName
  * @author    Your Name
- * @copyright 2019 Your Name or Company Name
+ * @copyright 2021 Your Name or Company Name
  * @license   GPL-2.0-or-later
  */
 
@@ -27,3 +27,4 @@ if ( ! defined( 'PLUGIN_NAME_FILE' ) ) {
 require_once( dirname( PLUGIN_NAME_FILE ) . '/vendor/autoload.php' );
 
 \PluginName\Loader::newInstance( plugin_basename( PLUGIN_NAME_FILE ) );
+

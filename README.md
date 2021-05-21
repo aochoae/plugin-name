@@ -65,7 +65,7 @@ Happy Coding!
 
 Install Grunt
 
-    [sudo] npm install --global grunt-cli
+    sudo npm install --global grunt-cli
     npm install --silent
 
 Build (Minify resources)
