@@ -10,7 +10,7 @@ namespace PluginName\Admin\Settings;
  *
  * @since 1.0.0
  */
-class General extends AbstractPage
+final class General extends AbstractPage
 {
     /**
      * Singleton instance

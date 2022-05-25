@@ -4,3 +4,4 @@ phpunit.xml
 vendor/
 [Rr]elease
 node_modules
+.idea/

@@ -10,7 +10,7 @@ namespace PluginName;
  *
  * @since 1.0.0
  */
-class Loader
+final class Loader
 {
     /**
      * Plugin version

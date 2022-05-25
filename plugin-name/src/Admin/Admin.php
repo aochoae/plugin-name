@@ -14,19 +14,19 @@ use PluginName\Admin\Settings\About;
  *
  * @since 1.0.0
  */
-class Admin
+final class Admin
 {
     /**
      * @since 1.0.0
      * @var string
      */
-    private $plugin_file = null;
+    private $plugin_file;
 
     /**
      * @since 1.0.0
      * @var string
      */
-    private $plugin_slug = null;
+    private $plugin_slug;
 
     /**
      * Singleton instance

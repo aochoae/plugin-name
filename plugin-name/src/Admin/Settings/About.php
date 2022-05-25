@@ -10,7 +10,7 @@ namespace PluginName\Admin\Settings;
  *
  * @since 1.0.0
  */
-class About extends AbstractPage
+final class About extends AbstractPage
 {
     /**
      * Singleton instance

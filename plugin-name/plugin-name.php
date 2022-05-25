@@ -13,7 +13,7 @@
  *
  * @package   PluginName
  * @author    Your Name
- * @copyright 2021 Your Name or Company Name
+ * @copyright 2022 Your Name or Company Name
  * @license   GPL-2.0-or-later
  */
 
