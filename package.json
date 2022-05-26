@@ -6,7 +6,7 @@
     "license": "GPL-2.0-or-later",
     "private": true,
     "devDependencies": {
-        "grunt": "^1.5.2",
+        "grunt": "^1.5.3",
         "grunt-contrib-cssmin": "^4.0.0",
         "grunt-contrib-uglify": "^5.0.1",
         "grunt-version": "^2.0.0"
